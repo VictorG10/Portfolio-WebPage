@@ -360,10 +360,13 @@ section .home-content h1 span {
 }
 
 .about-content h3 {
+  position: relative;
+  display: inline-block;
   font-size: 2.6rem;
 }
 
 .about-content p {
+  position: relative;
   font-size: 1.6rem;
   margin: 2rem 0 3rem;
 }
@@ -397,11 +400,14 @@ section .home-content h1 span {
 }
 
 .education-column .title {
+  position: relative;
+  display: inline-block;
   font-size: 2.5rem;
   margin: 0 0 1.5rem 2rem;
 }
 
 .education-column .education-box {
+  position: relative;
   border-left: 0.2rem solid var(--main-color);
 }
 
@@ -740,6 +746,22 @@ section .home-content h1 span {
 .home.show-animate .animate {
   animation: showRight 1s ease forwards;
   animation-delay: calc(0.3s * var(--i));
+}
+
+.animate.scroll {
+  transition: 1s ease;
+  transition-delay: calc(0.3s / var(--i));
+  animation: none;
+}
+
+.education .education-box .animate.scroll {
+  width: 105%;
+}
+
+.about.show-animate .animate.scroll,
+.education.show-animate .animate.scroll {
+  transition-delay: calc(0.3s * var(--i));
+  width: 0;
 }
 
 /* Breakpoints */
